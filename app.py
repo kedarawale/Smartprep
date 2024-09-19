@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 import io
-import fitz  # PyMuPDF
+from PyMuPDF import fitz
 import docx2txt
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
