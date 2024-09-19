@@ -1,8 +1,8 @@
 import streamlit as st
 import os
 import io
-from PyMuPDF import fitz
-import docx2txt
+from pypdf import PdfReader
+from docx import Document
 from sentence_transformers import SentenceTransformer
 import google.generativeai as genai
 import tiktoken
@@ -21,19 +21,23 @@ def extract_text_from_file(file):
     file_extension = os.path.splitext(file.name)[1].lower()
     try:
         if file_extension == '.pdf':
-            with fitz.open(stream=file.read(), filetype="pdf") as pdf:
-                text = ""
-                for page in pdf:
-                    text += page.get_text()
-                return text
+            pdf_reader = PdfReader(io.BytesIO(file.getvalue()))
+            text = ""
+            for page in pdf_reader.pages:
+                text += page.extract_text()
+            print(f"Extracted {len(text)} characters from PDF")
+            return text
         elif file_extension == '.txt':
             return file.getvalue().decode('utf-8')
         elif file_extension in ['.doc', '.docx']:
-            return docx2txt.process(io.BytesIO(file.getvalue()))
+            doc = Document(io.BytesIO(file.getvalue()))
+            text = "\n".join([paragraph.text for paragraph in doc.paragraphs])
+            return text
         else:
             raise ValueError(f"Unsupported file type: {file_extension}")
     except Exception as e:
         print(f"Error extracting text from {file.name}: {str(e)}")
+        print(f"File content: {file.getvalue().decode('utf-8', errors='ignore')[:100]}...")
         return ""
 
 def num_tokens_from_string(string: str, encoding_name: str = "cl100k_base") -> int:
@@ -240,7 +244,7 @@ Upload one or more files (PDF, TXT, DOC, DOCX), provide a description, specify t
 Select the difficulty level and select the question type you want to generate.
 """)
 
-uploaded_files = st.file_uploader("Upload files (PDF, TXT, DOC, DOCX)", type=['pdf', 'txt', 'doc', 'docx'], accept_multiple_files=True)
+uploaded_files = st.file_uploader("Upload files (PDF, TXT, DOC, DOCX)", type=['pdf', 'txt', 'doc', 'docx'], accept_multiple_files=True, key="file_uploader")
 
 if uploaded_files:
     all_text = ""
