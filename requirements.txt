@@ -1,5 +1,5 @@
 docx==0.2.4
-protobuf==5.28.2
+protobuf<5 and >=3.20
 pypdf==5.0.0
 python_docx==0.8.11
 sentence_transformers==2.2.2
