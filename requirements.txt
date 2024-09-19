@@ -1,6 +1,7 @@
+python_version == "3.10"
 docx2txt==0.8
 protobuf==4.25.3
-PyMuPDF==1.18.0
+pymupdf>=1.18.0,<2.0.0
 sentence_transformers==2.2.2
 streamlit==1.31.1
 tiktoken==0.7.0
