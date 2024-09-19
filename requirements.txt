@@ -1,6 +1,7 @@
-docx2txt==0.8
-sentence_transformers>=2.2.2,<3.0.0
-streamlit>=1.31.1,<2.0.0
-tiktoken>=0.7.0,<0.8.0
-PyPDF2
-PyMuPDF==1.18.0
+docx==0.2.4
+protobuf==5.28.2
+pypdf==5.0.0
+python_docx==0.8.11
+sentence_transformers==2.2.2
+streamlit==1.31.1
+tiktoken==0.7.0
