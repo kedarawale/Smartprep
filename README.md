@@ -72,7 +72,7 @@ Contributions to ExamCraft AI are welcome! Please feel free to submit pull reque
 
 ## License
 
-[MIT%20License](LICENSE)
+[MIT Licence](MIT%20License)
 
 
 
