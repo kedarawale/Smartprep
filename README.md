@@ -66,9 +66,9 @@ ExamCraft AI is an intelligent tool that automatically generates exam questions 
 4. The generated questions are parsed, validated, and formatted according to the specified question type.
 5. The results are displayed in the Streamlit interface and can be downloaded as a text file.
 
-## Contributing
+## Contribution
 
-Contributions to ExamCraft AI are welcome! Please feel free to submit pull requests, create issues or spread the word.
+Contributions to ExamCraft AI are welcome! Please feel free to submit pull requests.
 
 ## License
 
