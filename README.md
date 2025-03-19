@@ -68,7 +68,7 @@ Smartprep is an intelligent tool that automatically generates exam questions fro
 
 ## Contribution
 
-Contributions to ExamCraft AI are welcome! Please feel free to submit pull requests.
+Contributions to Smartprep are welcome! Please feel free to submit pull requests.
 
 ## License
 
