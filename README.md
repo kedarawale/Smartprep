@@ -1,8 +1,8 @@
 
 
-# ExamCraft AI
+# Smartprep
 
-ExamCraft AI is an intelligent tool that automatically generates exam questions from uploaded documents and user descriptions. It leverages Google's Gemini AI and Streamlit to create customized questions for various educational purposes.
+Smartprep is an intelligent tool that automatically generates exam questions from uploaded documents and user descriptions. It leverages Google's Gemini AI and Streamlit to create customized questions for various educational purposes.
 
 ## Features
 
